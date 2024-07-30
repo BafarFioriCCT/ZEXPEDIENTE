@@ -29,7 +29,7 @@
 										<form:formElements>
 											<form:FormElement visible="true">
 												<form:label>
-													<Label text="N° Empleado" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+													<Label text="N° Empleado xd" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 												</form:label>
 												<form:fields>
 													<Text text="{NoEmp}"/>
