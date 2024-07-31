@@ -46,16 +46,24 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 		},
 		consultainfo    : function () {
 			var noemp = this.byId("noemp").getValue();
+			console.log("noemp", noemp);
 			var lv_Error;
 			var router = sap.ui.core.UIComponent.getRouterFor(this);
 			var that=this;
 			var Objeto = "/EmpleadoSet(NoEmp='" + noemp + "')";
 			
-				this.getOwnerComponent().getModel().read("/EmpleadoSet(NoEmp='" + noemp + "')", {
+			this.getOwnerComponent().getModel().read("/EmpleadoSet(NoEmp='" + noemp + "')", {
+				
 				success: function (oData, oResponse) {
+					console.log(oData);
+					console.log("response", oResponse);
 					that.getView().bindElement({path:Objeto});
+				},
+				error: function (oError) {
+					lv_Error = oError;
+					console.log("error", lv_Error);
 				}
-		});
+			});
 		},
 		_onFileUploaderChange: function () {
 			// Please implement
