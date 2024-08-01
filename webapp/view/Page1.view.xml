@@ -550,7 +550,7 @@
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<Table width="auto" noDataText="Sin Datos para Mostrar" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true"
-								items="{path: 'Sanciones/'}" class="sapUiResponsiveMargin">
+								items="{path: 'SancionesSet/'}" class="sapUiResponsiveMargin">
 								<infoToolbar>
 									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 										<content>
@@ -577,31 +577,43 @@
 								<columns>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="Formacion" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="N° Empleado" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="Instituto" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="Fecha de inicio" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="País" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="Fecha de término" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="Título" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="N° Falta" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
 									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="Especialidad" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="N° Sanción" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Falta" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Sanción" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
@@ -609,11 +621,13 @@
 								<items>
 									<ColumnListItem type="Active">
 										<cells>
-											<Text text="{CFormacion}"/>
-											<Text text="{Instituto}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{Pais}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{path: 'Titulo', formatter: '.formatter.convertescuela'}"/>
-											<Text text="{CProfesion}"/>
+											<Text text="{Pernr}"/>
+											<Text text="{endda}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{begda}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{id_falta}"/>
+											<Text text="{id_sancion}"/>
+											<Text text="{desc_falta}"/>
+											<Text text="{desc_sancion}"/>
 										</cells>
 									</ColumnListItem>
 								</items>
@@ -626,7 +640,7 @@
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<Table width="auto" noDataText="Sin Datos para Mostrar" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true"
-								items="{path: 'Sanciones/'}" class="sapUiResponsiveMargin">
+								items="{path: 'SancionesSet/'}" class="sapUiResponsiveMargin">
 								<infoToolbar>
 									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 										<content>
@@ -703,7 +717,7 @@
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<Table width="auto" noDataText="Sin Datos para Mostrar" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true"
-								items="{path: 'Sanciones/'}" class="sapUiResponsiveMargin">
+								items="{path: 'SancionesSet/'}" class="sapUiResponsiveMargin">
 								<infoToolbar>
 									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 										<content>
