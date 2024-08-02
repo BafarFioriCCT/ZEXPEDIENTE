@@ -775,6 +775,264 @@
 						</content>
 					</IconTabFilter>
 					<IconTabSeparator icon="" iconDensityAware="false"/>
+					<IconTabFilter
+                        icon="sap-icon://employee-pane"
+                        iconColor="Default"
+                        text="Puesto"
+                        count=""
+                        design="Vertical"
+                        showAll="false"
+                        textDirection="Inherit"
+                        enabled="true"
+                        visible="true"
+                        iconDensityAware="false"
+                    >
+                        <content>
+                            <form:Form
+                                width="100%"
+                                editable="true"
+                                visible="true"
+                            >
+                                <form:title>
+                                    <core:Title
+                                        text="Datos Puesto"
+                                        level="Auto"
+                                    />
+                                </form:title>
+                                <form:formContainers>
+                                    <form:FormContainer visible="true">
+                                        <form:formElements>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="Sociedad"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text text="{Sociedad}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="División Personal"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text
+                                                        text="{DivPersonal}"
+                                                    />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="Grupo Personal"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text
+                                                        text="{GrpPersonal}"
+                                                    />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="Área Personal"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text
+                                                        text="{AreaPersonal}"
+                                                    />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="Centro de Coste"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text
+                                                        text="{CentroCoste}"
+                                                    />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="Nombre CC"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text text="{CCNombre}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                        <form:title />
+                                    </form:FormContainer>
+                                    <form:FormContainer visible="true">
+                                        <form:formElements>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="Unidad Organizativa"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text text="{UnidadOrg}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="Nombre UG"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text text="{UGNombre}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="Posicion"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text text="{Posicion}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="Nombre Posición"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text
+                                                        text="{PosicionNombre}"
+                                                    />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="Función"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text text="{Funcion}" />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
+                                                        text="Nombre Función"
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Text
+                                                        text="{FuncionNombre}"
+                                                    />
+                                                </form:fields>
+                                            </form:FormElement>
+                                        </form:formElements>
+                                        <form:title />
+                                    </form:FormContainer>
+                                </form:formContainers>
+                                <form:layout>
+                                    <form:ResponsiveGridLayout
+                                        adjustLabelSpan="false"
+                                        columnsL="2"
+                                        labelSpanL="3"
+                                        columnsM="1"
+                                        labelSpanM="2"
+                                        labelSpanS="12"
+                                    />
+                                </form:layout>
+                            </form:Form>
+                        </content>
+                    </IconTabFilter>
+                    <IconTabSeparator
+                        icon=""
+                        iconDensityAware="false"
+                    />
+ 
 					<!--					<IconTabFilter icon="sap-icon://employee-rejections" iconColor="Default" text="Laboral" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
