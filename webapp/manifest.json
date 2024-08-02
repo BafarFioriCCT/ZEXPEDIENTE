@@ -13,7 +13,9 @@
                 "uri": "/sap/opu/odata/sap/ZEXPEDIENTE_FIORI_SRV/",
                 "type": "OData",
                 "settings": {
-                    "localUri": "localService/ZEXPEDIENTE_FIORI_SRV/metadata.xml"
+                    "annotations": [],
+                    "localUri": "localService/ZEXPEDIENTE_FIORI_SRV/metadata.xml",
+                    "odataVersion": "2.0"
                 }
             }
         },

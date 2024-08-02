@@ -550,7 +550,7 @@
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<Table width="auto" noDataText="Sin Datos para Mostrar" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true"
-								items="{path: 'SancionesSet/'}" class="sapUiResponsiveMargin">
+								items="{path: 'Sanciones/'}" class="sapUiResponsiveMargin">
 								<infoToolbar>
 									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 										<content>
@@ -575,43 +575,31 @@
 									</OverflowToolbar>
 								</headerToolbar>
 								<columns>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+									<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
 											<Text text="N° Empleado" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+									<Column width="20%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
 											<Text text="Fecha de inicio" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+									<Column width="25%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="Fecha de término" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="Falta" width="auto" maxLines="2" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+									<Column width="25%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="N° Falta" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="Descripcion de la falta" width="auto" maxLines="2" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-										<header>
-											<Text text="N° Sanción" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-										</header>
-										<footer/>
-									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
-										<header>
-											<Text text="Falta" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-										</header>
-										<footer/>
-									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+									<Column width="20%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
 											<Text text="Sanción" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
@@ -622,12 +610,11 @@
 									<ColumnListItem type="Active">
 										<cells>
 											<Text text="{Pernr}"/>
-											<Text text="{endda}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{begda}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{id_falta}"/>
-											<Text text="{id_sancion}"/>
-											<Text text="{desc_falta}"/>
-											<Text text="{desc_sancion}"/>
+											<Text text="{path: 'Begda', type: 'sap.ui.model.type.Date', 
+												formatOptions: {UTC: true, pattern: 'dd.MM.yyyy' }}"/>
+											<Text text="{DescFalta}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{TxtFalta}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{DescSancion}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</cells>
 									</ColumnListItem>
 								</items>
