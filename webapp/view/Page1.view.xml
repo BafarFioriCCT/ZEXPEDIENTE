@@ -612,9 +612,9 @@
 											<Text text="{Pernr}"/>
 											<Text text="{path: 'Begda', type: 'sap.ui.model.type.Date', 
 												formatOptions: {UTC: true, pattern: 'dd.MM.yyyy' }}"/>
-											<Text text="{DescFalta}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{TxtFalta}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{DescSancion}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{DescFalta}" width="auto" maxLines="2" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{TxtFalta}" width="auto" maxLines="2" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="{DescSancion}" width="auto" maxLines="2" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</cells>
 									</ColumnListItem>
 								</items>
@@ -700,11 +700,11 @@
 					<!--En la pantalla de Fiori Expediente del empleado – Nueva Pestaña que estén
 					los datos de absentismos e incidencias del empleado (con filtros para
 					fechas)-->
-					<IconTabFilter icon="sap-icon://employee-rejections" iconColor="Default" text="Incidencias" count="" design="Vertical" showAll="false"
+					<IconTabFilter icon="sap-icon://employee-rejections" iconColor="Default" text="Absentismos" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
 							<Table width="auto" noDataText="Sin Datos para Mostrar" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true"
-								items="{path: 'SancionesSet/'}" class="sapUiResponsiveMargin">
+								items="{path: 'AbsentismosSet/'}" class="sapUiResponsiveMargin">
 								<infoToolbar>
 									<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
 										<content>
@@ -715,7 +715,7 @@
 								<headerToolbar>
 									<OverflowToolbar width="auto" height="auto" design="Transparent" visible="true" enabled="true">
 										<content>
-											<Title text="Sanciones y acciones disciplinarias" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
+											<Title text="Absentismos e Incidencias" titleStyle="Auto" width="auto" textAlign="Begin" visible="true" wrapping="false"/>
 											<ToolbarSpacer width=""/>
 											<OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true"
 												iconDensityAware="false"/>
@@ -729,33 +729,39 @@
 									</OverflowToolbar>
 								</headerToolbar>
 								<columns>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+									<Column width="10%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="Formacion" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="Subtipo" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+									<Column width="20%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="Instituto" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="Inicio de validez" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+									<Column width="20%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="País" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="Fin de la validez" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+									<Column width="15%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="Título" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="Clase de absentismo" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
-									<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+									<Column width="20%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
 										<header>
-											<Text text="Especialidad" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+											<Text text="Días de absentismo/presencia" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+										</header>
+										<footer/>
+									</Column>
+									<Column width="15%" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+										<header>
+											<Text text="Horas" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
 										</header>
 										<footer/>
 									</Column>
@@ -763,11 +769,14 @@
 								<items>
 									<ColumnListItem type="Active">
 										<cells>
-											<Text text="{CFormacion}"/>
-											<Text text="{Instituto}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{Pais}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
-											<Text text="{path: 'Titulo', formatter: '.formatter.convertescuela'}"/>
-											<Text text="{CProfesion}"/>
+											<Text text="{Subty}"/>
+											<Text text="{path: 'Begda', type: 'sap.ui.model.type.Date', 
+												formatOptions: {UTC: true, pattern: 'dd.MM.yyyy' }}"/>
+											<Text text="{path: 'Endda', type: 'sap.ui.model.type.Date', 
+												formatOptions: {UTC: true, pattern: 'dd.MM.yyyy' }}"/>
+											<Text text="{Awart'}"/>
+											<Text text="{Abrtg}"/>
+											<Text text="{Abrst}"/>
 										</cells>
 									</ColumnListItem>
 								</items>
@@ -778,7 +787,7 @@
 					<IconTabFilter
                         icon="sap-icon://employee-pane"
                         iconColor="Default"
-                        text="Puesto"
+                        text="Absentismo"
                         count=""
                         design="Vertical"
                         showAll="false"
