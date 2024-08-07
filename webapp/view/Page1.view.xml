@@ -544,6 +544,10 @@
 							</Table>
 						</content>
 					</IconTabFilter>
+					<IconTabSeparator
+                        icon=""
+                        iconDensityAware="false"
+                    />
 					<!--Nueva pestaña que contiene las sanciones y acciones disciplinarias registradas en SAP-->
 					<IconTabFilter icon="sap-icon://decline" iconColor="Default" text="Sanciones" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
@@ -620,6 +624,10 @@
 							</Table>
 						</content>
 					</IconTabFilter>
+					<IconTabSeparator
+                        icon=""
+                        iconDensityAware="false"
+                    />
 					<!--Nueva pestaña en la que estén los activos que tienen los empleados en su resguardo-->
 					<IconTabFilter icon="sap-icon://product" iconColor="Default" text="Activos" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
@@ -702,6 +710,10 @@
 							</Table>
 						</content>
 					</IconTabFilter>
+					<IconTabSeparator
+                        icon=""
+                        iconDensityAware="false"
+                    />
 					<!--Nueva Pestaña con los datos de absentismos e incidencias del empleado (con filtros para fechas)-->
 					<IconTabFilter icon="sap-icon://employee-rejections" iconColor="Default" text="Absentismos" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
@@ -779,9 +791,681 @@
 							</Table>
 						</content>
 					</IconTabFilter>
-					
-					<IconTabSeparator icon="" iconDensityAware="false"/>
-					<IconTabFilter
+					<IconTabSeparator
+                        icon=""
+                        iconDensityAware="false"
+                    />
+					<!--***************************************************-->
+                    <!--VACACIONES-->
+                    <!--***************************************************-->
+                    <IconTabFilter
+                        icon="sap-icon://general-leave-request"
+                        iconColor="Default"
+                        text="Vacaciones"
+                        count=""
+                        design="Vertical"
+                        showAll="false"
+                        textDirection="Inherit"
+                        enabled="true"
+                        visible="true"
+                        iconDensityAware="false"
+                    >
+                        <content>
+                            <Table
+                                width="auto"
+                                noDataText="Sin Datos para Mostrar"
+                                mode="None"
+                                showSeparators="All"
+                                growing="true"
+                                growingThreshold="20"
+                                growingScrollToLoad="true"
+                                items="{path: 'Vacaciones/'}"
+                                class="sapUiResponsiveMargin"
+                            >
+                                <infoToolbar>
+                                    <Toolbar
+                                        width="100%"
+                                        height="auto"
+                                        design="Auto"
+                                        visible="false"
+                                        enabled="true"
+                                    >
+                                        <content>
+                                            <Label
+                                                text="Label"
+                                                design="Standard"
+                                                width="100%"
+                                                required="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </content>
+                                    </Toolbar>
+                                </infoToolbar>
+                                <headerToolbar>
+                                    <OverflowToolbar
+                                        width="auto"
+                                        height="auto"
+                                        design="Transparent"
+                                        visible="true"
+                                        enabled="true"
+                                    >
+                                        <content>
+                                            <Title
+                                                text="Datos Vacacionales"
+                                                titleStyle="Auto"
+                                                width="auto"
+                                                textAlign="Begin"
+                                                visible="true"
+                                                wrapping="false"
+                                            />
+                                            <ToolbarSpacer width="" />
+                                            <OverflowToolbarButton
+                                                text="Sort"
+                                                type="Transparent"
+                                                icon="sap-icon://sort"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                            <OverflowToolbarButton
+                                                text="Filter"
+                                                type="Transparent"
+                                                icon="sap-icon://filter"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                            <OverflowToolbarButton
+                                                text="Group"
+                                                type="Transparent"
+                                                icon="sap-icon://group-2"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                            <OverflowToolbarButton
+                                                text="Settings"
+                                                type="Transparent"
+                                                icon="sap-icon://action-settings"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Clase"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Derecho"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Fecha Inicio"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Fecha Final"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Liquidación"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Active">
+                                        <cells />
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </content>
+                    </IconTabFilter>
+					<IconTabSeparator
+                        icon=""
+                        iconDensityAware="false"
+                    />
+                    <!--***************************************************-->
+                    <!--FINIQUITOS-->
+                    <!--***************************************************-->
+                    <IconTabFilter
+                        icon="sap-icon://paid-leave"
+                        iconColor="Default"
+                        text="Finiquitos"
+                        count=""
+                        design="Vertical"
+                        showAll="false"
+                        textDirection="Inherit"
+                        enabled="true"
+                        visible="true"
+                        iconDensityAware="false"
+                    >
+                        <content>
+                            <Table
+                                width="auto"
+                                noDataText="Sin Datos para Mostrar"
+                                mode="None"
+                                showSeparators="All"
+                                growing="true"
+                                growingThreshold="20"
+                                growingScrollToLoad="true"
+                                items="{path: 'Historia/'}"
+                                class="sapUiResponsiveMargin"
+                            >
+                                <infoToolbar>
+                                    <Toolbar
+                                        width="100%"
+                                        height="auto"
+                                        design="Auto"
+                                        visible="false"
+                                        enabled="true"
+                                    >
+                                        <content>
+                                            <Label
+                                                text="Label"
+                                                design="Standard"
+                                                width="100%"
+                                                required="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </content>
+                                    </Toolbar>
+                                </infoToolbar>
+                                <headerToolbar>
+                                    <OverflowToolbar
+                                        width="auto"
+                                        height="auto"
+                                        design="Transparent"
+                                        visible="true"
+                                        enabled="true"
+                                    >
+                                        <content>
+                                            <Title
+                                                text="Datos Finiquito"
+                                                titleStyle="Auto"
+                                                width="auto"
+                                                textAlign="Begin"
+                                                visible="true"
+                                                wrapping="false"
+                                            />
+                                            <ToolbarSpacer width="" />
+                                            <OverflowToolbarButton
+                                                text="Sort"
+                                                type="Transparent"
+                                                icon="sap-icon://sort"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                            <OverflowToolbarButton
+                                                text="Filter"
+                                                type="Transparent"
+                                                icon="sap-icon://filter"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                            <OverflowToolbarButton
+                                                text="Group"
+                                                type="Transparent"
+                                                icon="sap-icon://group-2"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                            <OverflowToolbarButton
+                                                text="Settings"
+                                                type="Transparent"
+                                                icon="sap-icon://action-settings"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="false"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Aliq"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="false"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Clte"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Motivo"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="ID Nomina"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>   
+									<Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Fecha Contrato"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Fecha Terminación"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Fecha Pago"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Antigüedad"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Total Renumeración"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Total Deducción"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="A Pagar"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Active">
+                                        <cells>
+                                            <Text text="{Aliq}" />
+                                            <Text text="{Clte}" />
+                                            <Text text="{Motivo}" />
+                                            <Text text="{IdNomina}" />
+                                            <Text text="{FechaContrato}" />
+                                            <Text text="{FechaTerm}" />
+                                            <Text text="{FechaPago}" />
+                                            <Text text="{Antiguedad}" />
+                                            <Text text="{TotalRenum}" />
+                                            <Text text="{TotalDeduc}" />
+                                            <Text text="{APagar}" />
+                                        </cells>
+                                    </ColumnListItem>
+                                    <ColumnListItem type="Active">
+                                        <cells>
+                                            <layout:HorizontalLayout>
+                                                <Text text="{Aliq}" />
+                                                <layout:content />
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <Text text="{Clte}" />
+                                                <layout:content />
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <Text text="{Motivo}" />
+                                                <layout:content />
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <Text text="{IdNomina}" />
+                                                <layout:content />
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <Text
+                                                    text="{path: 'FechaContrato', type: 'sap.ui.model.type.Date',
+                                                formatOptions: {UTC: true, pattern: 'dd.MM.yyyy' }}"
+                                                />
+                                                <layout:content />
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <Text
+                                                    text="{path: 'FechaTerm', type: 'sap.ui.model.type.Date',
+                                                formatOptions: {UTC: true, pattern: 'dd.MM.yyyy' }}"
+                                                />
+                                                <layout:content />
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <Text
+                                                    text="{path: 'FechaPago', type: 'sap.ui.model.type.Date',
+                                                formatOptions: {UTC: true, pattern: 'dd.MM.yyyy' }}"
+                                                />
+                                                <layout:content />
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <Text text="{Antiguedad}" />
+                                                <layout:content />
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <Text text="{TotalRenum}" />
+                                                <layout:content />
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <Text text="{TotalDeduc}" />
+                                                <layout:content />
+                                            </layout:HorizontalLayout>
+                                            <layout:HorizontalLayout>
+                                                <Text text="{APagar}" />
+                                                <layout:content />
+                                            </layout:HorizontalLayout>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </content>
+                    </IconTabFilter>
+					<IconTabSeparator
+                        icon=""
+                        iconDensityAware="false"
+                    />
+                    <!--***************************************************-->
+                    <!--DESCRIPCIÓN DEL PUESTO-->
+                    <!--***************************************************-->
+                    <IconTabFilter
                         icon="sap-icon://employee-pane"
                         iconColor="Default"
                         text="Puesto"
@@ -794,251 +1478,390 @@
                         iconDensityAware="false"
                     >
                         <content>
-                            <form:Form
-                                width="100%"
-                                editable="true"
-                                visible="true"
+                            <Table
+                                width="auto"
+                                noDataText="Sin Datos para Mostrar"
+                                mode="None"
+                                showSeparators="All"
+                                growing="true"
+                                growingThreshold="20"
+                                growingScrollToLoad="true"
+                                items="{path: 'DescPuesto/'}"
+                                class="sapUiResponsiveMargin"
                             >
-                                <form:title>
-                                    <core:Title
-                                        text="Datos Puesto"
-                                        level="Auto"
-                                    />
-                                </form:title>
-                                <form:formContainers>
-                                    <form:FormContainer visible="true">
-                                        <form:formElements>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Sociedad"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text text="{Sociedad}" />
-                                                </form:fields>
-                                            </form:FormElement>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="División Personal"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text
-                                                        text="{DivPersonal}"
-                                                    />
-                                                </form:fields>
-                                            </form:FormElement>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Grupo Personal"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text
-                                                        text="{GrpPersonal}"
-                                                    />
-                                                </form:fields>
-                                            </form:FormElement>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Área Personal"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text
-                                                        text="{AreaPersonal}"
-                                                    />
-                                                </form:fields>
-                                            </form:FormElement>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Centro de Coste"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text
-                                                        text="{CentroCoste}"
-                                                    />
-                                                </form:fields>
-                                            </form:FormElement>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Nombre CC"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text text="{CCNombre}" />
-                                                </form:fields>
-                                            </form:FormElement>
-                                        </form:formElements>
-                                        <form:title />
-                                    </form:FormContainer>
-                                    <form:FormContainer visible="true">
-                                        <form:formElements>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Unidad Organizativa"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text text="{UnidadOrg}" />
-                                                </form:fields>
-                                            </form:FormElement>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Nombre UG"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text text="{UGNombre}" />
-                                                </form:fields>
-                                            </form:FormElement>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Posicion"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text text="{Posicion}" />
-                                                </form:fields>
-                                            </form:FormElement>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Nombre Posición"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text
-                                                        text="{PosicionNombre}"
-                                                    />
-                                                </form:fields>
-                                            </form:FormElement>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Función"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text text="{Funcion}" />
-                                                </form:fields>
-                                            </form:FormElement>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Nombre Función"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text
-                                                        text="{FuncionNombre}"
-                                                    />
-                                                </form:fields>
-                                            </form:FormElement>
-                                        </form:formElements>
-                                        <form:title />
-                                    </form:FormContainer>
-                                </form:formContainers>
-                                <form:layout>
-                                    <form:ResponsiveGridLayout
-                                        adjustLabelSpan="false"
-                                        columnsL="2"
-                                        labelSpanL="3"
-                                        columnsM="1"
-                                        labelSpanM="2"
-                                        labelSpanS="12"
-                                    />
-                                </form:layout>
-                            </form:Form>
+                                <infoToolbar>
+                                    <Toolbar
+                                        width="100%"
+                                        height="auto"
+                                        design="Auto"
+                                        visible="false"
+                                        enabled="true"
+                                    >
+                                        <content>
+                                            <Label
+                                                text="Label"
+                                                design="Standard"
+                                                width="100%"
+                                                required="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </content>
+                                    </Toolbar>
+                                </infoToolbar>
+                                <headerToolbar>
+                                    <OverflowToolbar
+                                        width="auto"
+                                        height="auto"
+                                        design="Transparent"
+                                        visible="true"
+                                        enabled="true"
+                                    >
+                                        <content>
+                                            <Title
+                                                text="Datos Puesto"
+                                                titleStyle="Auto"
+                                                width="auto"
+                                                textAlign="Begin"
+                                                visible="true"
+                                                wrapping="false"
+                                            />
+                                            <ToolbarSpacer width="" />
+                                            <OverflowToolbarButton
+                                                text="Sort"
+                                                type="Transparent"
+                                                icon="sap-icon://sort"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                            <OverflowToolbarButton
+                                                text="Filter"
+                                                type="Transparent"
+                                                icon="sap-icon://filter"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                            <OverflowToolbarButton
+                                                text="Group"
+                                                type="Transparent"
+                                                icon="sap-icon://group-2"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                            <OverflowToolbarButton
+                                                text="Settings"
+                                                type="Transparent"
+                                                icon="sap-icon://action-settings"
+                                                iconFirst="true"
+                                                width="auto"
+                                                enabled="true"
+                                                visible="true"
+                                                iconDensityAware="false"
+                                            />
+                                        </content>
+                                    </OverflowToolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Sociedad"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Div Personal"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Grp Personal"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Área Personal"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Centro Coste"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Nombre"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Unidad Organizativa"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Nombre"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Posición"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Nombre"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Función"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                    <Column
+                                        width="auto"
+                                        hAlign="Left"
+                                        vAlign="Top"
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true"
+                                        popinDisplay="Inline"
+                                        mergeDuplicates="false"
+                                    >
+                                        <header>
+                                            <Text
+                                                text="Nombre"
+                                                width="auto"
+                                                maxLines="1"
+                                                wrapping="false"
+                                                textAlign="Begin"
+                                                textDirection="Inherit"
+                                                visible="true"
+                                            />
+                                        </header>
+                                        <footer />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Active">
+                                        <cells>
+                                            <Text text="{Sociedad}" />
+                                            <Text text="{DivPersonal}" />
+                                            <Text text="{GrpPersonal}" />
+                                            <Text text="{AreaPersonal}" />
+                                            <Text text="{CentroCoste}" />
+                                            <Text text="{CCNombre}" />
+                                            <Text text="{UnidadOrg}" />
+                                            <Text text="{UGNombre}" />
+                                            <Text text="{Posicion}" />
+                                            <Text text="{PosicionNombre}" />
+                                            <Text text="{Funcion}" />
+                                            <Text text="{FuncionNombre}" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
                         </content>
                     </IconTabFilter>
                     <IconTabSeparator
                         icon=""
                         iconDensityAware="false"
                     />
- 
 					<!--					<IconTabFilter icon="sap-icon://employee-rejections" iconColor="Default" text="Laboral" count="" design="Vertical" showAll="false"
 						textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
 						<content>
