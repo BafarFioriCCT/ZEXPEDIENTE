@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZEXPEDIENTE_FIORI_SRV" xml:lang="es" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Direccion" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NoEmp"/>
+                </Key>
+                <Property Name="NoEmp" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CalleNum" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Calle/Número" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Poblacion" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Población" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Distrito" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Distrito" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Cp" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="CódP/Pobl" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NoTel" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="Nº teléfono" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Estado" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Región" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NoCasa" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Nº (edificio)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Numero" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Nº" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Empleado" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NoEmp"/>
+                </Key>
+                <Property Name="NoEmp" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fecha_Baja" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Válido a" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ValidoDe" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Válido de" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApellidoP" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Apellido" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApellidoM" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Apellid.soltera" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NombreEmo" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Nombre" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Genero" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Género" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FechaNacimiento" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Fecha nacim." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pais" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="País nacim." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Estado" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Estado federado" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ciudad" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Lugar nacim." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nacionalidad" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Nacionalidad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EdoCivil" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Estado civil" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Curp" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="NIF" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Anioanti" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Año Antiguedad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Edad" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Mes nacimiento" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mesanti" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Mes Antiguedad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Diaanti" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Día Antiguedad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NomPosicion" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Denominación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="RFC" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Número ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IMSS" Type="Edm.String" Nullable="false" MaxLength="11" sap:unicode="false" sap:label="Numero Imss" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdHorario" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Regla para plan horario trabajo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescHorario" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Desc Horario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ceco" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Centro de coste" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescCeco" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Concepto de búsqueda para utilizar matchcodes" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AreaNomina" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Área de nómina" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TipoBaja" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Tipo de Baja" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MotivoBaja" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Motivo de Baja" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Absentismos" Relationship="ZEXPEDIENTE_FIORI_SRV.EmpleadoToAbsentismos" FromRole="FromRole_EmpleadoToAbsentismos" ToRole="ToRole_EmpleadoToAbsentismos"/>
+                <NavigationProperty Name="Sanciones" Relationship="ZEXPEDIENTE_FIORI_SRV.EmpleadoToSanciones" FromRole="FromRole_EmpleadoToSanciones" ToRole="ToRole_EmpleadoToSanciones"/>
+                <NavigationProperty Name="DescPuesto" Relationship="ZEXPEDIENTE_FIORI_SRV.EmpleadoToDescPuesto" FromRole="FromRole_EmpleadoToDescPuesto" ToRole="ToRole_EmpleadoToDescPuesto"/>
+                <NavigationProperty Name="Finiquitos" Relationship="ZEXPEDIENTE_FIORI_SRV.EmpleadoToFiniquitos" FromRole="FromRole_EmpleadoToFiniquitos" ToRole="ToRole_EmpleadoToFiniquitos"/>
+                <NavigationProperty Name="Historia" Relationship="ZEXPEDIENTE_FIORI_SRV.EmpleadoToHistoria" FromRole="FromRole_EmpleadoToHistoria" ToRole="ToRole_EmpleadoToHistoria"/>
+                <NavigationProperty Name="Mando" Relationship="ZEXPEDIENTE_FIORI_SRV.EmpleadoToMando" FromRole="FromRole_EmpleadoToMando" ToRole="ToRole_EmpleadoToMando"/>
+                <NavigationProperty Name="Escuela" Relationship="ZEXPEDIENTE_FIORI_SRV.EmpleadoToEscuela" FromRole="FromRole_EmpleadoToEscuela" ToRole="ToRole_EmpleadoToEscuela"/>
+                <NavigationProperty Name="Familia" Relationship="ZEXPEDIENTE_FIORI_SRV.EmpleadoToFamilia" FromRole="FromRole_EmpleadoToFamilia" ToRole="ToRole_EmpleadoToFamilia"/>
+                <NavigationProperty Name="Direccion" Relationship="ZEXPEDIENTE_FIORI_SRV.EmpleadoToDireccion" FromRole="FromRole_EmpleadoToDireccion" ToRole="ToRole_EmpleadoToDireccion"/>
+                <NavigationProperty Name="Vacaciones" Relationship="ZEXPEDIENTE_FIORI_SRV.EmpleadoToVacaciones" FromRole="FromRole_EmpleadoToVacaciones" ToRole="ToRole_EmpleadoToVacaciones"/>
+            </EntityType>
+            <EntityType Name="Familia" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NoEmp"/>
+                    <PropertyRef Name="Nombre"/>
+                </Key>
+                <Property Name="NoEmp" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FinValidez" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Válido a" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Miembro" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Miembro familia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FechaNacimiento" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Fecha" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Genero" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Género" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nombre" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Nombre" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApellidoP" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Apellido" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ApellidoM" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="2º apellido" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Escuela" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NoEmp"/>
+                    <PropertyRef Name="Instituto"/>
+                </Key>
+                <Property Name="NoEmp" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ClaseInstituto" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Cl.inst.enseñ." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Instituto" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Instituto/Pob." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pais" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="País" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Formacion" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Formación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Titulo" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Título" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CFormacion" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Formacion" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CProfesion" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Profesion" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Mando" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NoEmp"/>
+                </Key>
+                <Property Name="NoEmp" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NombreJefe" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Nom.empl./cand." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Posicion" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Posición" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descripcion" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Denominación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Historia" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NoEmp"/>
+                    <PropertyRef Name="FechaIni"/>
+                </Key>
+                <Property Name="NoEmp" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FechaFin" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Fecha final" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FechaIni" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Fecha de inicio" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Posicion" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="TOeIDO" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Descripcion" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Denominación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Finiquitos" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NoEmp"/>
+                </Key>
+                <Property Name="APagar" Type="Edm.Decimal" Nullable="false" Precision="7" Scale="2" sap:unicode="false" sap:label="Total A Pagar" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotalDeduc" Type="Edm.Decimal" Nullable="false" Precision="7" Scale="2" sap:unicode="false" sap:label="Total Deducido" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TotalRenum" Type="Edm.Decimal" Nullable="false" Precision="7" Scale="2" sap:unicode="false" sap:label="Total Renumerado" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Antiguedad" Type="Edm.Decimal" Nullable="false" Precision="3" Scale="2" sap:unicode="false" sap:label="Antigüedad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FechaPago" Type="Edm.DateTime" Nullable="false" Precision="8" sap:unicode="false" sap:label="Fecha Pago" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FechaTerm" Type="Edm.DateTime" Nullable="false" Precision="8" sap:unicode="false" sap:label="Fecha Terminación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FechaContrato" Type="Edm.DateTime" Nullable="false" Precision="8" sap:unicode="false" sap:label="Fecha Contrato" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdNomina" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="ID Nomina" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Motivo" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Motivo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Clte" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aliq" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Área de nómina" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NoEmp" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="DescPuesto" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NoEmp"/>
+                </Key>
+                <Property Name="FuncionNombre" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Nombre Función" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Funcion" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Función" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PosicionNombre" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Nombre Posición" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Posicion" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Posición" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UGNombre" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Nombre Unidad Org" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UnidadOrg" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Unidad Organizativa" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CCNombre" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Nombre Centro Coste" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CentroCoste" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Centro Coste" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="AreaPersonal" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Área Personal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GrpPersonal" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Grupo Personal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DivPersonal" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="División Personal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sociedad" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Sociedad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NoEmp" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Sanciones" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                    <PropertyRef Name="Begda"/>
+                </Key>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº personal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Begda" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Válido de" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescFalta" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Explicación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescSancion" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Explicación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TxtFalta" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="Explicación" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Absentismos" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                    <PropertyRef Name="Begda"/>
+                </Key>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Nº personal" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Endda" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Válido a" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Begda" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Válido de" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Awart" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Cl.abs./pres." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Abrtg" Type="Edm.Decimal" Nullable="false" Precision="6" Scale="2" sap:unicode="false" sap:label="Días nóm." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Abrst" Type="Edm.Decimal" Nullable="false" Precision="7" Scale="2" sap:unicode="false" sap:label="Horas nómina" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Vacaciones" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="NoEmp"/>
+                </Key>
+                <Property Name="Liquid" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="5" sap:unicode="false" sap:label="Vacaciones liquid." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FechaFinal" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Fecha final" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FechaInicio" Type="Edm.DateTime" Nullable="false" Precision="0" sap:unicode="false" sap:label="Fecha inicio" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Derecho" Type="Edm.Decimal" Nullable="false" Precision="10" Scale="5" sap:unicode="false" sap:label="Derecho vacac." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Clase" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Clase vacac." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NoEmp" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Usuario" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="EmpleadoToFamilia" sap:content-version="1">
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Empleado" Multiplicity="1" Role="FromRole_EmpleadoToFamilia"/>
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Familia" Multiplicity="*" Role="ToRole_EmpleadoToFamilia"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpleadoToFamilia">
+                        <PropertyRef Name="NoEmp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpleadoToFamilia">
+                        <PropertyRef Name="NoEmp"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="EmpleadoToEscuela" sap:content-version="1">
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Empleado" Multiplicity="1" Role="FromRole_EmpleadoToEscuela"/>
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Escuela" Multiplicity="*" Role="ToRole_EmpleadoToEscuela"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpleadoToEscuela">
+                        <PropertyRef Name="NoEmp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpleadoToEscuela">
+                        <PropertyRef Name="NoEmp"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="EmpleadoToMando" sap:content-version="1">
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Empleado" Multiplicity="1" Role="FromRole_EmpleadoToMando"/>
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Mando" Multiplicity="*" Role="ToRole_EmpleadoToMando"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpleadoToMando">
+                        <PropertyRef Name="NoEmp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpleadoToMando">
+                        <PropertyRef Name="NoEmp"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="EmpleadoToHistoria" sap:content-version="1">
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Empleado" Multiplicity="1" Role="FromRole_EmpleadoToHistoria"/>
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Historia" Multiplicity="*" Role="ToRole_EmpleadoToHistoria"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpleadoToHistoria">
+                        <PropertyRef Name="NoEmp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpleadoToHistoria">
+                        <PropertyRef Name="NoEmp"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="EmpleadoToFiniquitos" sap:content-version="1">
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Empleado" Multiplicity="1" Role="FromRole_EmpleadoToFiniquitos"/>
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Finiquitos" Multiplicity="*" Role="ToRole_EmpleadoToFiniquitos"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpleadoToFiniquitos">
+                        <PropertyRef Name="NoEmp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpleadoToFiniquitos">
+                        <PropertyRef Name="NoEmp"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="EmpleadoToDescPuesto" sap:content-version="1">
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Empleado" Multiplicity="1" Role="FromRole_EmpleadoToDescPuesto"/>
+                <End Type="ZEXPEDIENTE_FIORI_SRV.DescPuesto" Multiplicity="*" Role="ToRole_EmpleadoToDescPuesto"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpleadoToDescPuesto">
+                        <PropertyRef Name="NoEmp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpleadoToDescPuesto">
+                        <PropertyRef Name="NoEmp"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="EmpleadoToSanciones" sap:content-version="1">
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Empleado" Multiplicity="1" Role="FromRole_EmpleadoToSanciones"/>
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Sanciones" Multiplicity="*" Role="ToRole_EmpleadoToSanciones"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpleadoToSanciones">
+                        <PropertyRef Name="NoEmp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpleadoToSanciones">
+                        <PropertyRef Name="Pernr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="EmpleadoToAbsentismos" sap:content-version="1">
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Empleado" Multiplicity="1" Role="FromRole_EmpleadoToAbsentismos"/>
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Absentismos" Multiplicity="*" Role="ToRole_EmpleadoToAbsentismos"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpleadoToAbsentismos">
+                        <PropertyRef Name="NoEmp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpleadoToAbsentismos">
+                        <PropertyRef Name="Pernr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="EmpleadoToVacaciones" sap:content-version="1">
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Empleado" Multiplicity="1" Role="FromRole_EmpleadoToVacaciones"/>
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Vacaciones" Multiplicity="*" Role="ToRole_EmpleadoToVacaciones"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpleadoToVacaciones">
+                        <PropertyRef Name="NoEmp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpleadoToVacaciones">
+                        <PropertyRef Name="NoEmp"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="EmpleadoToDireccion" sap:content-version="1">
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Empleado" Multiplicity="1" Role="FromRole_EmpleadoToDireccion"/>
+                <End Type="ZEXPEDIENTE_FIORI_SRV.Direccion" Multiplicity="*" Role="ToRole_EmpleadoToDireccion"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmpleadoToDireccion">
+                        <PropertyRef Name="NoEmp"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmpleadoToDireccion">
+                        <PropertyRef Name="NoEmp"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZEXPEDIENTE_FIORI_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="DireccionSet" EntityType="ZEXPEDIENTE_FIORI_SRV.Direccion" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="EmpleadoSet" EntityType="ZEXPEDIENTE_FIORI_SRV.Empleado" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FamiliaSet" EntityType="ZEXPEDIENTE_FIORI_SRV.Familia" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="EscuelaSet" EntityType="ZEXPEDIENTE_FIORI_SRV.Escuela" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MandoSet" EntityType="ZEXPEDIENTE_FIORI_SRV.Mando" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="HistoriaSet" EntityType="ZEXPEDIENTE_FIORI_SRV.Historia" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FiniquitosSet" EntityType="ZEXPEDIENTE_FIORI_SRV.Finiquitos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="DescPuestoSet" EntityType="ZEXPEDIENTE_FIORI_SRV.DescPuesto" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="SancionesSet" EntityType="ZEXPEDIENTE_FIORI_SRV.Sanciones" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="AbsentismosSet" EntityType="ZEXPEDIENTE_FIORI_SRV.Absentismos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="VacacionesSet" EntityType="ZEXPEDIENTE_FIORI_SRV.Vacaciones" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="EmpleadoToAbsentismosSet" Association="ZEXPEDIENTE_FIORI_SRV.EmpleadoToAbsentismos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmpleadoSet" Role="FromRole_EmpleadoToAbsentismos"/>
+                    <End EntitySet="AbsentismosSet" Role="ToRole_EmpleadoToAbsentismos"/>
+                </AssociationSet>
+                <AssociationSet Name="EmpleadoToHistoriaSet" Association="ZEXPEDIENTE_FIORI_SRV.EmpleadoToHistoria" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmpleadoSet" Role="FromRole_EmpleadoToHistoria"/>
+                    <End EntitySet="HistoriaSet" Role="ToRole_EmpleadoToHistoria"/>
+                </AssociationSet>
+                <AssociationSet Name="EmpleadoToEscuelaSet" Association="ZEXPEDIENTE_FIORI_SRV.EmpleadoToEscuela" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmpleadoSet" Role="FromRole_EmpleadoToEscuela"/>
+                    <End EntitySet="EscuelaSet" Role="ToRole_EmpleadoToEscuela"/>
+                </AssociationSet>
+                <AssociationSet Name="EmpleadoToMandoSet" Association="ZEXPEDIENTE_FIORI_SRV.EmpleadoToMando" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmpleadoSet" Role="FromRole_EmpleadoToMando"/>
+                    <End EntitySet="MandoSet" Role="ToRole_EmpleadoToMando"/>
+                </AssociationSet>
+                <AssociationSet Name="EmpleadoToFiniquitosSet" Association="ZEXPEDIENTE_FIORI_SRV.EmpleadoToFiniquitos" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmpleadoSet" Role="FromRole_EmpleadoToFiniquitos"/>
+                    <End EntitySet="FiniquitosSet" Role="ToRole_EmpleadoToFiniquitos"/>
+                </AssociationSet>
+                <AssociationSet Name="EmpleadoToDescPuestoSet" Association="ZEXPEDIENTE_FIORI_SRV.EmpleadoToDescPuesto" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmpleadoSet" Role="FromRole_EmpleadoToDescPuesto"/>
+                    <End EntitySet="DescPuestoSet" Role="ToRole_EmpleadoToDescPuesto"/>
+                </AssociationSet>
+                <AssociationSet Name="EmpleadoToVacacionesSet" Association="ZEXPEDIENTE_FIORI_SRV.EmpleadoToVacaciones" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmpleadoSet" Role="FromRole_EmpleadoToVacaciones"/>
+                    <End EntitySet="VacacionesSet" Role="ToRole_EmpleadoToVacaciones"/>
+                </AssociationSet>
+                <AssociationSet Name="EmpleadoToSancionesSet" Association="ZEXPEDIENTE_FIORI_SRV.EmpleadoToSanciones" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmpleadoSet" Role="FromRole_EmpleadoToSanciones"/>
+                    <End EntitySet="SancionesSet" Role="ToRole_EmpleadoToSanciones"/>
+                </AssociationSet>
+                <AssociationSet Name="EmpleadoToDireccionSet" Association="ZEXPEDIENTE_FIORI_SRV.EmpleadoToDireccion" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmpleadoSet" Role="FromRole_EmpleadoToDireccion"/>
+                    <End EntitySet="DireccionSet" Role="ToRole_EmpleadoToDireccion"/>
+                </AssociationSet>
+                <AssociationSet Name="EmpleadoToFamiliaSet" Association="ZEXPEDIENTE_FIORI_SRV.EmpleadoToFamilia" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmpleadoSet" Role="FromRole_EmpleadoToFamilia"/>
+                    <End EntitySet="FamiliaSet" Role="ToRole_EmpleadoToFamilia"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://svgwdap0.grupobafar.com:8000/sap/opu/odata/sap/ZEXPEDIENTE_FIORI_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://svgwdap0.grupobafar.com:8000/sap/opu/odata/sap/ZEXPEDIENTE_FIORI_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
