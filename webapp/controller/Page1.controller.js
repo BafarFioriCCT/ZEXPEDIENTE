@@ -5,7 +5,7 @@ sap.ui.define([
 	"use strict";
 
 	let aAllItems = [];
-
+	
 	return BaseController.extend("com.sap.build.standard.expediente.controller.Page1", {
 		formatter: formatter,
 
