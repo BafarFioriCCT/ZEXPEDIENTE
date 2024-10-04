@@ -1,11 +1,13 @@
 sap.ui.define([
+	'jquery.sap.global',
 	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageToast",
 	"../model/formatter"
-], function (BaseController, formatter) {
+], function (jQuery, BaseController, MessageToast, formatter) {
 	"use strict";
 
 	let aAllItems = [];
-	
+
 	return BaseController.extend("com.sap.build.standard.expediente.controller.Page1", {
 		formatter: formatter,
 
@@ -45,37 +47,39 @@ sap.ui.define([
 		},
 
 		consultainfo: function () {
-			var noemp = this.byId("noemp").getValue();
-			console.log("noemp", noemp);
-
-			var that = this;
-			var sPath = "/EmpleadoSet(NoEmp='" + noemp + "')";
-
-			var aExpandEntities = ["Absentismos", "DescPuesto", "Direccion", "Escuela", "Familia", "Finiquitos", "Historia", "Mando", "Sanciones", "Vacaciones"];
-			var sExpand = aExpandEntities.join(",");
+			var that = this,
+				noemp = this.byId("noemp").getValue(),
+				sPath = "/EmpleadoSet(NoEmp='" + noemp + "')",
+				aExpandEntities = [
+					"Absentismos", "DescPuesto", "Direccion", "Escuela", "Familia",
+					"Finiquitos", "Historia", "Mando", "Sanciones", "Vacaciones", "Activos"
+				],
+				sExpand = aExpandEntities.join(",");
 
 			this.getOwnerComponent().getModel().read(sPath, {
 				urlParameters: {
 					"$expand": sExpand
 				},
 				success: function (oData) {
-					console.log(oData);
 					that._bindDataToView(sPath);
 
+					that.setImageSrc(noemp);
 					that.updateEstadoForm(oData);
 					that.setVacacionesModel(oData);
 				},
 				error: function (oError) {
-					console.log("error", oError);
+					MessageToast.show("Error en traer los datos")
 				}
 			});
 		},
 
 		_bindDataToView: function (sPath) {
-			var oView = this.getView();
-
-			var aExpandEntities = ["Absentismos", "DescPuesto", "Direccion", "Escuela", "Familia", "Finiquitos", "Historia", "Mando", "Sanciones", "Vacaciones"];
-			var sExpand = aExpandEntities.join(",");
+			var oView = this.getView(),
+				aExpandEntities = [
+					"Absentismos", "DescPuesto", "Direccion", "Escuela", "Familia",
+					"Finiquitos", "Historia", "Mando", "Sanciones", "Vacaciones", "Activos"
+				],
+				sExpand = aExpandEntities.join(",");
 
 			oView.bindElement({
 				path: sPath,
@@ -106,49 +110,27 @@ sap.ui.define([
 		oTable.getBinding("items").filter([aFilter]);
 		*/
 
-		setVacacionesModel: function (oData) {
-			console.log(oData.Vacaciones);
-			if (Array.isArray(oData.Vacaciones.results)) {
-				var vacData = oData.Vacaciones.results.map(function (item) {
-					return {
-						Clase: item.Clase,
-						Derecho: item.Derecho,
-						FechaInicio: item.FechaInicio,
-						FechaFinal: item.FechaFinal,
-						Liquid: item.Liquid
-					}
-				});
-				console.log(vacData)
-
-				var oModel = new sap.ui.model.json.JSONModel({ Vacaciones: vacData });
-				this.getView().setModel(oModel, "NewVacMod");
-
-				// Enlazar la tabla a los datos procesados
-				var oTable = this.byId("vacTable");
-				oTable.setModel(oModel);
-				oTable.bindItems({
-					path: "NewVacMod>/Vacaciones",
-					template: oTable.getBindingInfo("items").template
-				});
-			} else {
-				console.error("Vacaciones no es un array");
-			}
+		setImageSrc: async function (NoEmp) {
+			var sImageUrl = "/sap/opu/odata/sap/ZEXPEDIENTE_FIORI_SRV/EmpleadoFotoSet('" + NoEmp + "')/$value",
+				oImage = this.byId("empleadoFoto");
+			oImage.setSrc(sImageUrl);
+			oImage.addStyleClass("sapUiSmallMargin");
 		},
 
 		updateEstadoForm: function (oData) {
-			var oForm = this.byId("formEstado");
-			var finiqArray = oData.Finiquitos.results;
-			
+			var oForm = this.byId("formEstado"),
+				finiqArray = oData.Finiquitos.results;
+
 			// Verifica si ya existe un FormContainer con un ID específico
 			var oExistingContainer = oForm.getFormContainers().find(function (container) {
 				return container.getId() === "customFormContainer";
 			});
-		
+
 			// Si el arreglo tiene elementos y no existe el FormContainer, añádelo
 			if (finiqArray.length > 0 && !oExistingContainer) {
 				var oLabelEstadoContr = this.byId("txtEstadoContr");
 				oLabelEstadoContr.setText("Inactivo");
-		
+
 				var oNewFormContainer = new sap.ui.layout.form.FormContainer("customFormContainer", {
 					formElements: [
 						new sap.ui.layout.form.FormElement({
@@ -165,27 +147,26 @@ sap.ui.define([
 						})
 					]
 				});
-		
+
 				oForm.addFormContainer(oNewFormContainer);
-			} 
+			}
 			// Si el arreglo está vacío y existe el FormContainer, destrúyelo
 			else if (finiqArray.length === 0 && oExistingContainer) {
 				oForm.removeFormContainer(oExistingContainer);
 				oExistingContainer.destroy();
-				
+
 				var oLabelEstadoContr = this.byId("txtEstadoContr");
 				oLabelEstadoContr.setText("Activo");
 			}
-		},		
-
+		},
 
 		getAbsentismosFiltered: function () {
-			var oTable = this.byId("tableAbsentismos");
-			var oBinding = oTable.getBinding("items");
+			var oTable = this.byId("tableAbsentismos"),
+				oBinding = oTable.getBinding("items");
 
 			// Verificar si el binding tiene datos
 			if (!oBinding) {
-				sap.m.MessageToast.show("No se encontraron datos para filtrar.");
+				MessageToast.show("No se encontraron datos para filtrar.");
 				return;
 			}
 
@@ -209,21 +190,21 @@ sap.ui.define([
 
 			// Verificar si la fecha está en el formato correcto (dd.MM.yyyy)
 			if (!sFechaInput) {
-				sap.m.MessageToast.show("Por favor, ingrese una fecha válida.");
+				MessageToast.show("Por favor, ingrese una fecha válida.");
 				return;
 			}
 
 			// Convertir la fecha al formato que se usa en el modelo (yyyy-MM-dd)
 			var aFechaParts = sFechaInput.split(".");
 			if (aFechaParts.length !== 3) {
-				sap.m.MessageToast.show("El formato de la fecha debe ser dd.MM.yyyy.");
+				MessageToast.show("El formato de la fecha debe ser dd.MM.yyyy.");
 				return;
 			}
 			var sFechaFiltro = aFechaParts[2] + "-" + aFechaParts[1] + "-" + aFechaParts[0] + "T00:00:00.000Z";
 
 			// Obtener los datos de la tabla (el contexto de cada item)
-			var aContexts = oBinding.getContexts(0, iTotalRecords);
-			var aItems = aContexts.map(function (oContext) {
+			var aContexts = oBinding.getContexts(0, iTotalRecords),
+				aItems = aContexts.map(function (oContext) {
 				return oContext.getObject();
 			});
 
@@ -250,12 +231,11 @@ sap.ui.define([
 			});
 		},
 
-
 		getAllAbsentismos: function () {
 			var oTable = this.byId("tableAbsentismos");
 
 			if (aAllItems.length === 0) {
-				sap.m.MessageToast.show("No se encontraron datos para recargar.");
+				MessageToast.show("No se encontraron datos para recargar.");
 				return;
 			}
 
@@ -271,7 +251,32 @@ sap.ui.define([
 				template: oTable.getBindingInfo("items").template
 			});
 
-			sap.m.MessageToast.show("Todos los registros han sido recargados.");
+			MessageToast.show("Todos los registros han sido recargados.");
+		},
+
+		setVacacionesModel: function (oData) {
+			if (Array.isArray(oData.Vacaciones.results)) {
+				var vacData = oData.Vacaciones.results.map(function (item) {
+					return {
+						Clase: item.Clase,
+						Derecho: item.Derecho,
+						FechaInicio: item.FechaInicio,
+						FechaFinal: item.FechaFinal,
+						Liquid: item.Liquid
+					}
+				});
+
+				var oModel = new sap.ui.model.json.JSONModel({ Vacaciones: vacData });
+				this.getView().setModel(oModel, "NewVacMod");
+
+				// Enlazar la tabla a los datos procesados
+				var oTable = this.byId("vacTable");
+				oTable.setModel(oModel);
+				oTable.bindItems({
+					path: "NewVacMod>/Vacaciones",
+					template: oTable.getBindingInfo("items").template
+				});
+			}
 		},
 	});
 }, /* bExport= */ true);

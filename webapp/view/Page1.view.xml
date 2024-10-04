@@ -100,6 +100,27 @@
                                             <form:FormElement visible="true">
                                                 <form:label>
                                                     <Label
+                                                        design="Standard"
+                                                        width="100%"
+                                                        required="false"
+                                                        textAlign="Begin"
+                                                        textDirection="Inherit"
+                                                        visible="true"
+                                                    />
+                                                </form:label>
+                                                <form:fields>
+                                                    <Image
+                                                        id="empleadoFoto"
+                                                        mode="Image"
+                                                        width="30%"
+                                                        height="30%"
+                                                        src=""
+                                                    />
+                                                </form:fields>
+                                            </form:FormElement>
+                                            <form:FormElement visible="true">
+                                                <form:label>
+                                                    <Label
                                                         text="N° Empleado"
                                                         design="Standard"
                                                         width="100%"
@@ -128,7 +149,12 @@
                                                 <form:fields>
                                                     <Text text="{NombreEmo}" />
                                                 </form:fields>
-                                            </form:FormElement>
+                                            </form:FormElement>   
+                                        </form:formElements>
+                                        <form:title />
+                                    </form:FormContainer>
+                                    <form:FormContainer visible="true">
+                                        <form:formElements>
                                             <form:FormElement visible="true">
                                                 <form:label>
                                                     <Label
@@ -195,11 +221,6 @@
                                                     <Text text="{Edad}" />
                                                 </form:fields>
                                             </form:FormElement>
-                                        </form:formElements>
-                                        <form:title />
-                                    </form:FormContainer>
-                                    <form:FormContainer visible="true">
-                                        <form:formElements>
                                             <form:FormElement visible="true">
                                                 <form:label>
                                                     <Label
@@ -250,24 +271,6 @@
                                                 </form:label>
                                                 <form:fields>
                                                     <Text text="{RFC}" />
-                                                </form:fields>
-                                            </form:FormElement>
-                                            <form:FormElement visible="true">
-                                                <form:label>
-                                                    <Label
-                                                        text="Puesto"
-                                                        design="Standard"
-                                                        width="100%"
-                                                        required="false"
-                                                        textAlign="Begin"
-                                                        textDirection="Inherit"
-                                                        visible="true"
-                                                    />
-                                                </form:label>
-                                                <form:fields>
-                                                    <Text
-                                                        text="{DescPuesto>FuncionNombre}"
-                                                    />
                                                 </form:fields>
                                             </form:FormElement>
                                             <form:FormElement visible="true">
@@ -424,46 +427,6 @@
                                                 wrapping="false"
                                             />
                                             <ToolbarSpacer width="" />
-                                            <OverflowToolbarButton
-                                                text="Sort"
-                                                type="Transparent"
-                                                icon="sap-icon://sort"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Filter"
-                                                type="Transparent"
-                                                icon="sap-icon://filter"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Group"
-                                                type="Transparent"
-                                                icon="sap-icon://group-2"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Settings"
-                                                type="Transparent"
-                                                icon="sap-icon://action-settings"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
                                         </content>
                                     </OverflowToolbar>
                                 </headerToolbar>
@@ -649,46 +612,6 @@
                                                 wrapping="false"
                                             />
                                             <ToolbarSpacer width="" />
-                                            <OverflowToolbarButton
-                                                text="Sort"
-                                                type="Transparent"
-                                                icon="sap-icon://sort"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Filter"
-                                                type="Transparent"
-                                                icon="sap-icon://filter"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Group"
-                                                type="Transparent"
-                                                icon="sap-icon://group-2"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Settings"
-                                                type="Transparent"
-                                                icon="sap-icon://action-settings"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
                                         </content>
                                     </OverflowToolbar>
                                 </headerToolbar>
@@ -891,53 +814,18 @@
                                                 wrapping="false"
                                             />
                                             <ToolbarSpacer width="" />
-                                            <OverflowToolbarButton
-                                                text="Sort"
-                                                type="Transparent"
-                                                icon="sap-icon://sort"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Filter"
-                                                type="Transparent"
-                                                icon="sap-icon://filter"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Group"
-                                                type="Transparent"
-                                                icon="sap-icon://group-2"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Settings"
-                                                type="Transparent"
-                                                icon="sap-icon://action-settings"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
                                         </content>
                                     </OverflowToolbar>
                                 </headerToolbar>
                                 <columns>
-                                    <!--<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">-->
+                                    <!--<Column
+                                    width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet"
+                                    demandPopin="true" popinDisplay="Inline"
+                                    mergeDuplicates="false">-->
                                     <!--	<header>-->
-                                    <!--		<Text text="N° Empleado" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+                                    <!--		<Text text="N° Empleado" width="auto" maxLines="1"
+                                    wrapping="false" textAlign="Begin" textDirection="Inherit"
+                                    visible="true"/>-->
                                     <!--	</header>-->
                                     <!--	<footer/>-->
                                     <!--</Column>-->
@@ -1183,46 +1071,6 @@
                                                 wrapping="false"
                                             />
                                             <ToolbarSpacer width="" />
-                                            <OverflowToolbarButton
-                                                text="Sort"
-                                                type="Transparent"
-                                                icon="sap-icon://sort"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Filter"
-                                                type="Transparent"
-                                                icon="sap-icon://filter"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Group"
-                                                type="Transparent"
-                                                icon="sap-icon://group-2"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Settings"
-                                                type="Transparent"
-                                                icon="sap-icon://action-settings"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
                                         </content>
                                     </OverflowToolbar>
                                 </headerToolbar>
@@ -1451,46 +1299,6 @@
                                                 wrapping="false"
                                             />
                                             <ToolbarSpacer width="" />
-                                            <OverflowToolbarButton
-                                                text="Sort"
-                                                type="Transparent"
-                                                icon="sap-icon://sort"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Filter"
-                                                type="Transparent"
-                                                icon="sap-icon://filter"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Group"
-                                                type="Transparent"
-                                                icon="sap-icon://group-2"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Settings"
-                                                type="Transparent"
-                                                icon="sap-icon://action-settings"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
                                         </content>
                                     </OverflowToolbar>
                                 </headerToolbar>
@@ -1642,7 +1450,8 @@
                         icon=""
                         iconDensityAware="false"
                     />
-                    <!--Sanciones y acciones disciplinarias registradas en SAP-->
+                    <!--Sanciones
+                    y acciones disciplinarias registradas en SAP-->
                     <IconTabFilter
                         icon="sap-icon://decline"
                         iconColor="Default"
@@ -1706,46 +1515,6 @@
                                                 wrapping="false"
                                             />
                                             <ToolbarSpacer width="" />
-                                            <OverflowToolbarButton
-                                                text="Sort"
-                                                type="Transparent"
-                                                icon="sap-icon://sort"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Filter"
-                                                type="Transparent"
-                                                icon="sap-icon://filter"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Group"
-                                                type="Transparent"
-                                                icon="sap-icon://group-2"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Settings"
-                                                type="Transparent"
-                                                icon="sap-icon://action-settings"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
                                         </content>
                                     </OverflowToolbar>
                                 </headerToolbar>
@@ -1906,7 +1675,8 @@
                         icon=""
                         iconDensityAware="false"
                     />
-                    <!--Nueva pestaña en la que estén los activos que tienen los empleados en su resguardo-->
+                    <!--Nueva
+                    pestaña en la que estén los activos que tienen los empleados en su resguardo-->
                     <IconTabFilter
                         icon="sap-icon://product"
                         iconColor="Default"
@@ -1970,72 +1740,10 @@
                                                 wrapping="false"
                                             />
                                             <ToolbarSpacer width="" />
-                                            <OverflowToolbarButton
-                                                text="Sort"
-                                                type="Transparent"
-                                                icon="sap-icon://sort"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Filter"
-                                                type="Transparent"
-                                                icon="sap-icon://filter"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Group"
-                                                type="Transparent"
-                                                icon="sap-icon://group-2"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Settings"
-                                                type="Transparent"
-                                                icon="sap-icon://action-settings"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
                                         </content>
                                     </OverflowToolbar>
                                 </headerToolbar>
                                 <columns>
-                                    <!--Column
-                                        width="auto"
-                                        hAlign="Left"
-                                        vAlign="Top"
-                                        minScreenWidth="Tablet"
-                                        demandPopin="true"
-                                        popinDisplay="Inline"
-                                        mergeDuplicates="false"
-                                    >
-                                        <header>
-                                            <Text
-                                                text="ID del equipo"
-                                                width="auto"
-                                                maxLines="1"
-                                                wrapping="false"
-                                                textAlign="Begin"
-                                                textDirection="Inherit"
-                                                visible="true"
-                                            />
-                                        </header>
-                                        <footer />
-                                    </Column-->
                                     <Column
                                         width="auto"
                                         hAlign="Left"
@@ -2101,7 +1809,8 @@
                                             />
                                         </header>
                                         <footer />
-                                    </Column><Column
+                                    </Column>
+                                    <Column
                                         width="auto"
                                         hAlign="Left"
                                         vAlign="Top"
@@ -2150,7 +1859,7 @@
                                     <ColumnListItem type="Active">
                                         <cells>
                                             <Text text="{NoSerie}" />
-                                             <Text
+                                            <Text
                                                 text="{path: 'Begda', type: 'sap.ui.model.type.Date', 
 												formatOptions: {UTC: true, pattern: 'dd.MM.yyyy' }}"
                                             />
@@ -2170,7 +1879,9 @@
                         icon=""
                         iconDensityAware="false"
                     />
-                    <!--Nueva Pestaña con los datos de absentismos e incidencias del empleado (con filtros para fechas)-->
+                    <!--Nueva
+                    Pestaña con los datos de absentismos e incidencias del empleado (con filtros
+                    para fechas)-->
                     <IconTabFilter
                         icon="sap-icon://employee-rejections"
                         iconColor="Default"
@@ -2249,14 +1960,6 @@
                                                 text="Mostrar todos"
                                             />
                                             <ToolbarSpacer width="" />
-                                            <!--OverflowToolbarButton text="Sort" type="Transparent" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true"
-												iconDensityAware="false"/>
-											<OverflowToolbarButton text="Filter" type="Transparent" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true"
-												iconDensityAware="false"/>
-											<OverflowToolbarButton text="Group" type="Transparent" icon="sap-icon://group-2" iconFirst="true" width="auto" enabled="true" visible="true"
-												iconDensityAware="false"/>
-											<OverflowToolbarButton text="Settings" type="Transparent" icon="sap-icon://action-settings" iconFirst="true" width="auto" enabled="true"
-												visible="true" iconDensityAware="false"/-->
                                         </content>
                                     </OverflowToolbar>
                                 </headerToolbar>
@@ -2464,46 +2167,6 @@
                                                 wrapping="false"
                                             />
                                             <ToolbarSpacer width="" />
-                                            <OverflowToolbarButton
-                                                text="Sort"
-                                                type="Transparent"
-                                                icon="sap-icon://sort"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Filter"
-                                                type="Transparent"
-                                                icon="sap-icon://filter"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Group"
-                                                type="Transparent"
-                                                icon="sap-icon://group-2"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
-                                            <OverflowToolbarButton
-                                                text="Settings"
-                                                type="Transparent"
-                                                icon="sap-icon://action-settings"
-                                                iconFirst="true"
-                                                width="auto"
-                                                enabled="true"
-                                                visible="true"
-                                                iconDensityAware="false"
-                                            />
                                         </content>
                                     </OverflowToolbar>
                                 </headerToolbar>
